@@ -12,7 +12,7 @@ const ACTS=[
  {k:'Act III',t:'Worlds',d:'Blender x AI, product, spectacle',items:ads.slice(12),c1:'#34e0c3',c2:'#2f6bff'}
 ];
 const tun=$('#tunnel'),frames=[],acts=[];
-let z=0,idx=0;const START=900,GAP=420,ACTGAP=620;
+let z=0,idx=0;const START=900,GAP=470,ACTGAP=620;
 z=START;
 const sc=()=>mobile()?.55:1;
 ACTS.forEach((a,ai)=>{
@@ -27,13 +27,16 @@ ACTS.forEach((a,ai)=>{
  z+=ACTGAP*.4;
 });
 const END=z+300;
+const rnd=(n=>{let a=n;return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}})(35);
+frames.forEach(f=>{f._r=[rnd(),rnd(),rnd(),rnd(),rnd(),rnd()]});
 function layout(){frames.forEach((f,i)=>{
- const vw=innerWidth,vh=innerHeight,m=mobile();
- const rxMax=m?vw*.30:vw*.34,ryMax=m?vh*.26:vh*.24;
- const side=i%2?1:-1;
- const x=side*(rxMax*(.55+.45*Math.abs(Math.sin(f._ang))));
- const y=Math.cos(f._ang*1.3)*ryMax;
- gsap.set(f,{x,y,z:-f._z,rotationY:-side*(m?10:16),rotationX:-y*.02,rotationZ:Math.sin(f._ang)*3,transformPerspective:0});
+ const vw=innerWidth,vh=innerHeight,m=mobile(),r=f._r;
+ const side=r[0]<.5?-1:1;
+ const xm=m?vw*.16:vw*.26, ym=m?vh*.24:vh*.26;
+ const x=side*xm*(.15+.95*r[1])*(m?.9:1.05);
+ const y=(r[2]*2-1)*ym;
+ const s=.82+r[3]*.5;
+ gsap.set(f,{x,y,z:-f._z,scale:s,rotationY:-side*(4+r[4]*(m?12:24)),rotationX:(r[5]*2-1)*(m?5:9),rotationZ:(r[4]*2-1)*(m?4:7),transformPerspective:0});
 });
  acts.forEach(a=>gsap.set(a.el,{z:-a.z}))}
 layout();ScrollTrigger.addEventListener('refreshInit',layout);
@@ -142,7 +145,12 @@ gsap.from('.credits>*',{y:50,opacity:0,duration:.9,stagger:.08,ease:'power3.out'
 /* ---------- click on frames (projected hit-test) ---------- */
 function frameAt(x,y){let best=null,bw=0;for(const f of frames){if(f._v!==1||(f._o??1)<.4)continue;const r=f.getBoundingClientRect();if(x>=r.left&&x<=r.right&&y>=r.top&&y<=r.bottom&&r.width>bw){bw=r.width;best=f}}return best}
 $('#flight').addEventListener('click',e=>{if(e.target.closest('a,button'))return;const f=frameAt(e.clientX,e.clientY);if(f)openPlayer(f._w,f)});
-$('#flight').addEventListener('pointermove',e=>{if(e.pointerType==='touch')return;$('#flight').style.cursor=frameAt(e.clientX,e.clientY)?'pointer':''});
+let hov=null,hmx=-1,hmy=-1;
+function setHover(f){if(f===hov)return;if(hov){hov.classList.remove('hov');const i=hov.firstChild;i.style.removeProperty('--rx');i.style.removeProperty('--ry')}hov=f;document.body.classList.toggle('hovering',!!f);if(f)f.classList.add('hov');$('#flight').style.cursor=f?'pointer':''}
+function hoverCheck(){if(hmx<0||mobile())return;const f=frameAt(hmx,hmy);setHover(f);if(f){const r=f.getBoundingClientRect(),px=(hmx-r.left)/r.width-.5,py=(hmy-r.top)/r.height-.5,i=f.firstChild;i.style.setProperty('--rx',(-py*14).toFixed(1)+'deg');i.style.setProperty('--ry',(px*18).toFixed(1)+'deg');i.style.setProperty('--gx',(px+.5)*100+'%');i.style.setProperty('--gy',(py+.5)*100+'%')}}
+$('#flight').addEventListener('pointermove',e=>{if(e.pointerType==='touch')return;hmx=e.clientX;hmy=e.clientY;hoverCheck()});
+$('#flight').addEventListener('pointerleave',()=>{hmx=-1;setHover(null)});
+gsap.ticker.add(()=>{if(hov||hmx>=0)hoverCheck()});
 
 /* ---------- quick scan ---------- */
 const cats=['All','Films','Ads','Animation'];
