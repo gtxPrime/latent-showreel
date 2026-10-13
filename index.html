@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Palash Sharma - Inside the latent space</title>
+<meta name="description" content="Fly through the work of Palash Sharma, AI filmmaker and editor.">
+<link rel="stylesheet" href="style.css">
+</head><body class="locked">
+
+<!-- LOADER: diffusion denoise -->
+<div id="pre">
+  <p class="pre-top">LATENT SPACE <i></i> v3.0</p>
+  <div class="pre-frame"><canvas id="dn" width="480" height="270"></canvas><span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span><div class="scan"></div></div>
+  <p class="pre-prompt">prompt: <em id="ptext"></em></p>
+  <div class="pre-row"><span>denoising step <b id="step">00</b>/50</span><span id="pct">0%</span></div>
+  <div class="pre-bar"><i id="pbar"></i></div>
+</div>
+<div id="flash"></div>
+
+<canvas id="stars"></canvas>
+<div id="glow"></div>
+
+<header class="hud off" id="hud">
+  <a href="#" class="logo" id="home">Palash<b>.</b>S</a>
+  <div class="hud-mid"><span class="lbl" id="actlbl">Prologue</span><b id="passing">AI filmmaker</b></div>
+  <div class="hud-r"><button class="ghost sm" id="prog">Quick scan</button><button class="ghost sm solid" id="toContact">Contact</button></div>
+</header>
+<div id="prog-bar" class="off"><i></i></div>
+<div class="tc off" id="tc"><span>TC <b id="tcv">00:00:00:00</b></span><span>FRAME <b id="frv">000</b>/035</span></div>
+
+<main>
+<section id="flight" class="flight">
+  <div class="cam"><div class="room"><div class="tunnel" id="tunnel"></div></div></div>
+  <div class="hero" id="hero">
+    <p class="kicker" id="hk">Showreel &middot; 2025</p>
+    <h1 id="hname" aria-label="Palash Sharma"></h1>
+    <p class="hsub">AI filmmaker &amp; editor. Crafting stories, frame by frame.</p>
+    <div class="hcta"><button class="btn solid" id="enter">Enter the latent space</button><button class="btn" id="prog2">Quick scan all 35</button></div>
+    <div class="hint"><span>Scroll to fly</span><i></i></div>
+  </div>
+  <div class="final off" id="final"><p class="kicker">Final cut</p><h2>Your story,<br><em>rendered next.</em></h2><a class="btn solid xl" href="/cdn-cgi/l/email-protection#94e4f5f8f5e7fce7fcf5e6f9f5ede0add4f3f9f5fdf8baf7fbf9">Start a project</a><button class="ghost" id="down">See credits &darr;</button></div>
+</section>
+
+<section id="contact" class="credits">
+  <p class="kicker">Credits</p>
+  <h2 class="big">Let's create<br><em>together</em></h2>
+  <p class="lead">We're here to bring your creative vision to life with innovative strategies and impactful designs.</p>
+  <a class="btn solid xl" href="/cdn-cgi/l/email-protection#9eeefff2ffedf6edf6ffecf3ffe7eaa7def9f3fff7f2b0fdf1f3">Start your project</a>
+  <p class="mail"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fd8d9c919c8e958e959c8f909c8489c4bd9a909c9491d39e9290">[email&#160;protected]</a></p>
+  <p class="social"><a href="https://in.linkedin.com/in/palash-sharma-4a449628a">LinkedIn</a><a href="https://www.instagram.com/palash_sharma_9/">Instagram</a></p>
+  <div class="tgrid">
+    <blockquote class="tcard"><p>The editing was smooth, and the pacing felt just right. The transitions were clean, and the final video had a nice, professional touch. Definitely a solid editor to work with!</p><footer><img src="assets/images/testimonials/1.webp" alt=""><div><b>Ashutosh</b><span>@iashusaini</span></div></footer></blockquote>
+    <blockquote class="tcard"><p>Really happy with the edits! The cuts kept the video engaging, and the overall flow was well-executed. Communication was good, and revisions were handled well.</p><footer><img src="assets/images/testimonials/2.webp" alt=""><div><b>Garvit</b><span>@itsalphawolf</span></div></footer></blockquote>
+    <blockquote class="tcard"><p>Good attention to detail, and the edits felt natural. The final result was clean and well put together.</p><footer><img src="assets/images/testimonials/3.webp" alt=""><div><b>Dileep</b><span>@DileepKumar</span></div></footer></blockquote>
+  </div>
+  <footer class="foot"><span>&copy; 2026 Palash Sharma</span><span>Designed by @gtxPrime</span></footer>
+</section>
+</main>
+
+<div id="programme" class="overlay" aria-hidden="true">
+  <div class="ov-head"><div><p class="kicker">Quick scan</p><h2>All 35 projects</h2></div><button class="x" id="closeProg" aria-label="Close">&times;</button></div>
+  <div class="scanbar"><div class="filters" id="filters"></div></div>
+  <div class="pgrid sgrid" id="pgrid"></div>
+</div>
+<div id="player" class="overlay dark" aria-hidden="true">
+  <button class="x" id="closePlayer" aria-label="Close">&times;</button>
+  <div class="pwrap"><div class="pframe" id="pframe"></div>
+    <div class="pmeta"><div><b id="ptitle"></b><span id="psub"></span></div><a id="pyt" href="#" target="_blank" rel="noopener" class="btn">Open on YouTube</a></div></div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="vendor/gsap.min.js"></script><script src="vendor/ScrollTrigger.min.js"></script><script src="vendor/lenis.min.js"></script>
+<script src="data.js"></script><script src="main.js"></script>
+</body></html>
