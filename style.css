@@ -40,7 +40,7 @@ em{font-style:normal;color:var(--acc)}
 .cam{position:absolute;inset:0;perspective:720px;perspective-origin:50% 50%}
 .room{position:absolute;inset:0;transform-style:preserve-3d}
 .tunnel{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;will-change:transform}
-.fr{position:absolute;left:0;top:0;width:min(40vw,520px);aspect-ratio:16/9;margin:calc(min(40vw,520px)*-.28) 0 0 calc(min(40vw,520px)*-.5);transform-style:preserve-3d;will-change:transform,opacity;backface-visibility:hidden}
+.fr{position:absolute;left:0;top:0;--fw:min(54vw,820px);width:var(--fw);aspect-ratio:16/9;margin:calc(var(--fw)*-.28) 0 0 calc(var(--fw)*-.5);transform-style:preserve-3d;will-change:transform,opacity;backface-visibility:hidden}
 .fimg{position:absolute;inset:0;overflow:hidden;border-radius:6px;background:#111;box-shadow:0 0 0 1px #ffffff22,0 24px 60px #000c,var(--ca,0 0 0 transparent)}
 .fimg img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1)}
 .fimg::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 60%,#000c)}
@@ -94,10 +94,21 @@ em{font-style:normal;color:var(--acc)}
 .foot{display:flex;justify-content:space-between;width:calc(100% + 10vw);padding:26px 5vw;margin-top:80px;border-top:1px solid var(--line);color:var(--mut);font-size:13px}
 
 @media(max-width:900px){
- .fr{width:min(62vw,300px);margin:calc(min(62vw,300px)*-.28) 0 0 calc(min(62vw,300px)*-.5)}
+ .fr{--fw:min(120vw,560px)}
  .cam{perspective:560px}
  .act{width:520px;margin-left:-260px}.act h2{font-size:110px}.act small{font-size:14px}.act p{font-size:12px}
  .hud-mid{display:none}.tgrid{grid-template-columns:1fr}.tc{gap:12px;font-size:10px;bottom:14px}
  .pgrid.sgrid{grid-template-columns:repeat(4,1fr)}.pcard h3{font-size:9px;padding:14px 4px 4px}.pcard h3 small{display:none}.pcard .no{font-size:8px}
 }
 @media(prefers-reduced-motion:reduce){.hint i,.scan,.rec::before{animation:none}}
+
+.fimg{transition:transform .35s cubic-bezier(.2,.8,.2,1),filter .35s,box-shadow .35s;transform:perspective(1000px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));--gx:50%;--gy:50%}
+.fimg::before{content:"";position:absolute;inset:0;z-index:1;opacity:0;transition:opacity .3s;pointer-events:none;background:radial-gradient(circle at var(--gx) var(--gy),#ffffff55,transparent 55%);mix-blend-mode:overlay}
+.fr.hov .fimg{transform:perspective(1000px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(160px) scale(1.12);box-shadow:0 0 0 2px var(--acc),0 0 90px color-mix(in srgb,var(--acc) 70%,transparent),0 40px 90px #000;transition:transform .12s linear,filter .35s,box-shadow .35s}
+.fr.hov .fimg::before{opacity:1}
+.fr.hov .fimg img{transform:scale(1.06)}
+.fimg img{transition:transform .6s}
+.fr.hov .ftag b{font-size:clamp(14px,1.9vw,22px)}
+.fr.hov .fimg::after{content:"\25B6  CLICK TO PLAY";display:flex;align-items:flex-start;justify-content:flex-end;padding:12px 14px;font:700 11px var(--mono);letter-spacing:.14em;color:#fff;background:linear-gradient(transparent 60%,#000c)}
+body.hovering .fr:not(.hov) .fimg{filter:brightness(.55) saturate(.7)}
+@media(max-width:900px){.fimg{transform:none!important}}
