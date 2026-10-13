@@ -12,7 +12,7 @@ const ACTS=[
  {k:'Act III',t:'Worlds',d:'Blender x AI, product, spectacle',items:ads.slice(12),c1:'#34e0c3',c2:'#2f6bff'}
 ];
 const tun=$('#tunnel'),frames=[],acts=[];
-let z=0,idx=0;const START=900,GAP=470,ACTGAP=620;
+let z=0,idx=0;const START=900,GAP=mobile()?470:480,ACTGAP=620;
 z=START;
 const sc=()=>mobile()?.55:1;
 ACTS.forEach((a,ai)=>{
@@ -29,16 +29,37 @@ ACTS.forEach((a,ai)=>{
 const END=z+300;
 const rnd=(n=>{let a=n;return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}})(35);
 frames.forEach(f=>{f._r=[rnd(),rnd(),rnd(),rnd(),rnd(),rnd()]});
+const pathX=(z,vw)=>vw*.52*Math.sin(z/640),pathY=(z,vh)=>vh*.27*Math.sin(z/470+1);
+const decos=[];
 function layout(){frames.forEach((f,i)=>{
  const vw=innerWidth,vh=innerHeight,m=mobile(),r=f._r;
- const side=r[0]<.5?-1:1;
- const xm=m?vw*.16:vw*.26, ym=m?vh*.24:vh*.26;
- const x=side*xm*(.15+.95*r[1])*(m?.9:1.05);
- const y=(r[2]*2-1)*ym;
- const s=.82+r[3]*.5;
- gsap.set(f,{x,y,z:-f._z,scale:s,rotationY:-side*(4+r[4]*(m?12:24)),rotationX:(r[5]*2-1)*(m?5:9),rotationZ:(r[4]*2-1)*(m?4:7),transformPerspective:0});
+ if(m){ // mobile layout (kept as shipped)
+  const side=r[0]<.5?-1:1,xm=vw*.16,ym=vh*.24;
+  const x=side*xm*(.15+.95*r[1])*.9,y=(r[2]*2-1)*ym,sc=.82+r[3]*.5;
+  gsap.set(f,{x,y,z:-f._z,scale:sc,rotationY:-side*(4+r[4]*12),rotationX:(r[5]*2-1)*5,rotationZ:(r[4]*2-1)*4,transformPerspective:0});
+ }else{ // desktop: frames ride a winding path
+  const side=i%2?1:-1,px=pathX(f._z,vw),py=pathY(f._z,vh);
+  gsap.set(f,{x:px+side*vw*.05,y:py+(r[2]-.5)*vh*.06,z:-f._z,scale:1,rotationY:-Math.cos(f._z/640)*13,rotationX:-py*.02,rotationZ:Math.sin(f._z/640)*2.5,transformPerspective:0});
+ }
 });
+ decos.forEach(d=>{const vw=innerWidth,vh=innerHeight;gsap.set(d,{x:pathX(d._z,vw)+(d._ox||0)*vw,y:pathY(d._z,vh)+(d._oy||0)*vh,z:-d._z})});
  acts.forEach(a=>gsap.set(a.el,{z:-a.z}))}
+/* ---------- path decor (desktop): dotted route + drifting film icons ---------- */
+const ICONS={
+ cam:'<svg viewBox="0 0 64 64"><rect x="6" y="18" width="38" height="28" rx="5"/><path d="M44 29l14-8v22l-14-8z"/><circle cx="16" cy="12" r="6"/><circle cx="30" cy="12" r="6"/></svg>',
+ reel:'<svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="26"/><circle cx="32" cy="32" r="5"/><circle cx="32" cy="15" r="6"/><circle cx="32" cy="49" r="6"/><circle cx="15" cy="32" r="6"/><circle cx="49" cy="32" r="6"/></svg>',
+ clap:'<svg viewBox="0 0 64 64"><rect x="6" y="26" width="52" height="30" rx="3"/><path d="M6 26l6-14 46 4-4 10M20 14l-6 12M34 15l-6 11M48 16l-6 10"/></svg>',
+ strip:'<svg viewBox="0 0 64 64"><rect x="14" y="4" width="36" height="56" rx="3"/><path d="M14 16h36M14 28h36M14 40h36M14 52h36"/><path d="M20 8v4M20 20v4M20 32v4M20 44v4M44 8v4M44 20v4M44 32v4M44 44v4"/></svg>',
+ play:'<svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="26"/><path d="M26 20l18 12-18 12z"/></svg>',
+ spark:'<svg viewBox="0 0 64 64"><path d="M32 4l6 22 22 6-22 6-6 22-6-22-22-6 22-6z"/></svg>',
+ mic:'<svg viewBox="0 0 64 64"><rect x="24" y="6" width="16" height="30" rx="8"/><path d="M14 30c0 12 8 20 18 20s18-8 18-20M32 50v10M22 60h20"/></svg>'};
+if(!mobile()){
+ const kinds=Object.keys(ICONS),span=END-START;
+ for(let zz=START+150,k=0;zz<END-200;zz+=48,k++){const d=document.createElement('i');d.className='pdot';d._z=zz;d._k=0;decos.push(d);tun.appendChild(d);d.style.animationDelay=(k%12)*.12+'s'}
+ for(let zz=START+260,k=0;zz<END-300;zz+=300,k++){const d=document.createElement('div');d.className='picon i-'+kinds[k%kinds.length];d.innerHTML=ICONS[kinds[k%kinds.length]];
+  const sd=(k%2?1:-1);d._z=zz+(k%3)*40;d._ox=sd*(.16+.08*((k*37)%10)/10);d._oy=((k*53)%10-5)/10*.22;d._k=1;d.style.setProperty('--d',(6+(k%5)*1.6)+'s');decos.push(d);tun.appendChild(d)}
+ layout();
+}
 layout();ScrollTrigger.addEventListener('refreshInit',layout);
 
 /* ---------- starfield ---------- */
@@ -128,6 +149,7 @@ ScrollTrigger.create({trigger:'#flight',start:'top top',end:()=>'+='+dist(),pin:
    const lit=d>180&&d<900;if(lit!==f._l){f._l=lit;f.classList.toggle('lit',lit)}
    if(d>0&&d<nd){nd=d;near=f}
    if(d<1800&&!mobile()){f.firstChild.style.setProperty('--ca',v>.15?`${-v*7}px 0 0 #ff2a55aa,${v*7}px 0 0 #2ad4ffaa`:'0 0 0 transparent')}}
+  for(const d of decos){const dd=d._z-c;const vis=dd>40&&dd<3200;if(vis!==d._vis){d._vis=vis;d.style.visibility=vis?'visible':'hidden'}if(vis){let o=dd>2200?(3200-dd)/1000:Math.min(1,(dd-40)/300);o=Math.round(o*25)/25;if(o!==d._o){d._o=o;d.style.opacity=o*(d._k?.9:.8)}}}
   for(const a of acts){const d=a.z-c;const o=d>2600?0:d>1800?(2600-d)/800:d<200?Math.max(0,d/200):1;if(a._o!==o){a._o=Math.round(o*40)/40;a.el.style.opacity=a._o;a.el.style.visibility=o<=0?'hidden':'visible'}}
   if(near!==state.near){state.near=near;if(near){$('#passing').textContent=near._w.title+' - '+near._w.sub;$('#actlbl').textContent=near._a.k+' - '+near._a.t}}
   if(!near){$('#passing').textContent='Final cut';$('#actlbl').textContent='End'}
