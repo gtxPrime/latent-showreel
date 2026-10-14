@@ -1,1 +1,318 @@
-window.WORKS=[{"n": 1, "img": "assets/images/awards/x.jpg", "title": "AI Spec Ad", "sub": "Ad through AI", "cat": "Ads", "url": "https://www.youtube.com/watch?v=w1oTqdrQfcA", "desc": ""}, {"n": 2, "img": "assets/images/awards/xxx.jpg", "title": "AI Spec Ad", "sub": "Ad through AI", "cat": "Ads", "url": "https://www.youtube.com/watch?v=C16HrGstyjw", "desc": ""}, {"n": 3, "img": "assets/images/awards/852.jpg", "title": "AI Spec Ad", "sub": "Ad through AI", "cat": "Ads", "url": "https://youtube.com/watch?v=tuCUrvSNBJ0", "desc": ""}, {"n": 4, "img": "assets/images/awards/191919.jpg", "title": "AI Spec Ad", "sub": "Ad through AI", "cat": "Ads", "url": "https://youtube.com/watch?v=9Ih74Qk_7lc", "desc": ""}, {"n": 5, "img": "assets/images/awards/169.jpg", "title": "AI Episode - AGMAN", "sub": "Story through AI", "cat": "Films", "url": "https://youtube.com/watch?v=_0CnGx15Hh4", "desc": ""}, {"n": 6, "img": "assets/images/awards/500.jpg", "title": "AI Movie - Honey Bun", "sub": "Story through AI", "cat": "Films", "url": "https://youtube.com/watch?v=cHhdKGhGnDY", "desc": ""}, {"n": 7, "img": "assets/images/awards/550.jpg", "title": "AI AD", "sub": "Story through AI", "cat": "Ads", "url": "https://youtube.com/watch?v=84fiKZdklXU", "desc": "Short AI Ad for Hush Puppies"}, {"n": 8, "img": "assets/images/awards/416.jpg", "title": "AI Movie", "sub": "Story through AI", "cat": "Films", "url": "https://www.youtube.com/watch?v=P1OadJV79Qk&t", "desc": ""}, {"n": 9, "img": "assets/images/awards/6767.jpg", "title": "AI Short-Film", "sub": "AI generated episode", "cat": "Films", "url": "https://youtube.com/watch?v=3pkuKTpwUVQ", "desc": "An AI-generated cinematic short inspired by the legend of Gajamukhasur. This episode blends ancient mythology with modern visual storytelling, featuring dramatic atmospheres, epic scale, and detailed world-building\u0097showcasing how artificial intelligence can transform timeless legends into a striking cinematic experience."}, {"n": 10, "img": "assets/images/awards/676767.jpg", "title": "AI Ad", "sub": "AI generated ad", "cat": "Ads", "url": "https://youtube.com/watch?v=r3iUzLmezrs", "desc": "An AI-generated cinematic advertisement designed for a patient communication app. This piece highlights clear, empathetic, and human-centered interactions through modern visual storytelling, clean aesthetics, and emotional moments\u0097demonstrating how artificial intelligence can elevate healthcare communication and create trust-driven digital experiences."}, {"n": 11, "img": "assets/images/awards/315.jpg", "title": "AI Movie", "sub": "Story through AI", "cat": "Films", "url": "https://youtube.com/watch?v=XK5-VcQXfoM", "desc": "Vangreey is an AI-generated short episode created for visual showcase and creative flex. Designed to highlight striking aesthetics, cinematic pacing, and bold visual experimentation, the piece demonstrates how artificial intelligence can be used as a powerful tool for modern storytelling and high-impact visual design."}, {"n": 12, "img": "assets/images/awards/9696.jpg", "title": "AI Ad", "sub": "Christmas AI Ad", "cat": "Ads", "url": "https://youtube.com/watch?v=Phda6PQ2LEg", "desc": "A Christmas-inspired AI-generated advertisement for a database company. The film blends festive warmth with clean, modern visuals\u0097using holiday themes of connection, reliability, and trust to showcase how intelligent data systems keep information secure, scalable, and always available, even during the busiest season of the year."}, {"n": 13, "img": "assets/images/awards/6969.jpg", "title": "AI Ad", "sub": "Christmas AI Ad", "cat": "Ads", "url": "https://youtube.com/watch?v=xogZeOptGnQ", "desc": "A Santa Factory\u0096themed AI-generated advertisement for a database company. Set inside a magical, high-tech workshop, the film blends festive charm with modern visuals\u0097reimagining Santa\u0092s operations as a powerful data engine where speed, reliability, and scalability keep everything running smoothly. The piece highlights how intelligent database systems work behind the scenes, delivering efficiency and trust at holiday scale."}, {"n": 14, "img": "assets/images/awards/775.jpg", "title": "AI Teaser", "sub": "Teaser made with AI", "cat": "Films", "url": "https://youtube.com/watch?v=GcF8Zgexcu4", "desc": "A 10-second AI-generated teaser that transforms sound into a powerful visual identity. Crafted with premium cinematic styling and bold symbolism, the piece is designed to create instant impact, hype, and visual flex\u0097celebrating the global presence and energy of BTS through a striking, minimalist concept."}, {"n": 15, "img": "assets/images/awards/333.jpg", "title": "AI Animation", "sub": "Animation through AI", "cat": "Animation", "url": "https://youtu.be/E3VkMik8ZyA", "desc": "An AI-animated storytelling experience created for kids to learn the basic laws of motion. Using simple characters, playful visuals, and clear narratives, the story breaks down complex science concepts into fun, easy-to-understand moments\u0097making learning engaging, memorable, and enjoyable while introducing ideas inspired by Isaac Newton in a child-friendly way."}, {"n": 16, "img": "assets/images/awards/444.jpg", "title": "AI Story", "sub": "Story through AI", "cat": "Films", "url": "https://youtu.be/jddnyEshr4Q", "desc": "An AI-generated storytelling piece set during Diwali, portraying a man working alone from home while the world outside celebrates. Through subtle visuals and emotional pacing, the story contrasts festive lights with quiet solitude\u0097capturing themes of modern work life, distance, and resilience, while gently reflecting on connection, warmth, and hope during the festival."}, {"n": 17, "img": "assets/images/awards/415.jpg", "title": "AI Movie", "sub": "Story through AI", "cat": "Films", "url": "https://www.youtube.com/watch?v=RzJqXdiTUd0", "desc": "An AI-generated storytelling short where a grandfather fondly narrates tales of his youthful days to his grandchildren, sharing memories of his first love with warmth, humor, and nostalgia. The story blends innocence, generational bonding, and gentle emotion capturing how personal memories become timeless stories passed down with love."}, {"n": 18, "img": "assets/images/awards/215.jpg", "title": "AI ad", "sub": "Story through AI", "cat": "Ads", "url": "https://youtube.com/watch?v=DbWSZ7pJ_IQ", "desc": "She \u0097 an AI-generated episodic piece centered on mood, emotion, and quiet intrigue. Through evocative visuals and minimal storytelling, the episode explores presence and feeling over plot, highlighting AI-driven creativity as a tool for atmospheric, expressive visual storytelling."}, {"n": 19, "img": "assets/images/awards/214.jpg", "title": "AI ad", "sub": "Story through AI", "cat": "Ads", "url": "https://youtube.com/watch?v=0KX_dslWGjs", "desc": ""}, {"n": 20, "img": "assets/images/awards/213.jpg", "title": "AI ad", "sub": "Story through AI", "cat": "Ads", "url": "https://youtube.com/watch?v=ac4_Hx4zSAw", "desc": ""}, {"n": 21, "img": "assets/images/awards/212.jpg", "title": "AI ad", "sub": "Story through AI", "cat": "Ads", "url": "https://youtube.com/watch?v=DclEADKSfwo", "desc": ""}, {"n": 22, "img": "assets/images/awards/21.jpg", "title": "AI ad", "sub": "Story through AI", "cat": "Ads", "url": "https://youtube.com/watch?v=8oghhYIdpm0", "desc": ""}, {"n": 23, "img": "assets/images/awards/20.jpg", "title": "AI ad", "sub": "Story through AI", "cat": "Ads", "url": "https://youtube.com/watch?v=0MAoD25CXMs", "desc": ""}, {"n": 24, "img": "assets/images/awards/14.jpg", "title": "AI ad", "sub": "Story through AI", "cat": "Ads", "url": "https://youtube.com/watch?v=oieGbamsza0", "desc": ""}, {"n": 25, "img": "assets/images/awards/15.jpg", "title": "AI Mother's day ad", "sub": "Emotions through AI", "cat": "Ads", "url": "https://youtube.com/watch?v=HFV4Wyyo5Fk", "desc": ""}, {"n": 26, "img": "assets/images/awards/10.jpg", "title": "AI Mother's day ad", "sub": "Emotions through AI", "cat": "Ads", "url": "http://youtube.com/watch?v=T9irqRlL-XE", "desc": ""}, {"n": 27, "img": "assets/images/awards/6.jpg", "title": "AI cinematic film (life)", "sub": "Cinematic life Through AI Lens", "cat": "Films", "url": "https://youtube.com/shorts/vvOwDjI8Lsw?si=wEgnQrMboZPfWTKI", "desc": ""}, {"n": 28, "img": "assets/images/awards/7.jpg", "title": "Ghibli art Animation", "sub": "An awesome ghibli art animation", "cat": "Animation", "url": "https://youtube.com/shorts/NkXyhKqafbQ?si=OhNhmN6Yt-3GX7kb", "desc": "Exploring the beautiful intersection of AI and art, this AI-generated video demonstrates how machine learning algorithms can simulate complex animation techniques and transform them into mesmerizing visual experiences with incredible detail."}, {"n": 29, "img": "assets/images/awards/8.jpg", "title": "Emigino ad", "sub": "An ad generated completely by AI", "cat": "Ads", "url": "https://youtube.com/shorts/NJfkNqquR3g?si=vcQEXQyH3_8YeF4W", "desc": "A harmonious blend of product visuals powered by AI, this piece transforms product into captivating ads."}, {"n": 30, "img": "assets/images/awards/9.jpg", "title": "AI chocolate world", "sub": "AI & Blender Fusion: Redefining Visual Storytelling", "cat": "Ads", "url": "https://youtube.com/shorts/enjnlEwgHDg?si=xnGJeaq_6myASq8-", "desc": "Blending AI innovation with Blender's powerful 3D capabilities, this ad showcases the future of digital creativity. A perfect harmony of technology and imagination that brings dynamic visuals to life./div>"}, {"n": 31, "img": "assets/images/awards/1.webp", "title": "AI Banner Ad", "sub": "AI & Blender Fusion: Redefining Visual Storytelling", "cat": "Ads", "url": "https://youtube.com/shorts/LYm9rXrEfkU?si", "desc": "Blending AI innovation with Blender's powerful 3D capabilities, this ad showcases the future of digital creativity. A perfect harmony of technology and imagination that brings dynamic visuals to life."}, {"n": 32, "img": "assets/images/awards/2.webp", "title": "AI & Blender: Creative Synergy", "sub": "Where Technology Meets Imagination", "cat": "Ads", "url": "https://youtu.be/JnrWbzxLIOU?si=xieGyhoWIfLDzmLB", "desc": "Combining the power of AI with Blender's 3D capabilities, this ad showcases how advanced tools can elevate visual storytelling, turning concepts into mesmerizing, high-quality visuals."}, {"n": 33, "img": "assets/images/awards/3.webp", "title": "AI Thakur Ad", "sub": "A Digital Twist on Iconic Moments", "cat": "Ads", "url": "https://youtube.com/shorts/QeuxOZZZE9s", "desc": "Blending AI innovation with classic imagery, this ad reimagines a legendary character in a modern digital landscape, creating a unique fusion of nostalgia and cutting-edge technology."}, {"n": 34, "img": "assets/images/awards/4.webp", "title": "Train Rex AI Ad", "sub": "Revolutionizing Gym Bookings with AI", "cat": "Ads", "url": "https://youtube.com/shorts/4dCfPtyqopk", "desc": "Combining smart AI technology with seamless booking, this ad highlights how Train Rex transforms the way fitness enthusiasts find and reserve gyms, offering a personalized and efficient experience."}, {"n": 35, "img": "assets/images/awards/5.webp", "title": "Costa Coffee AI Ad", "sub": "Brewing Perfection with AI", "cat": "Ads", "url": "https://youtube.com/shorts/SHtGYUENOtY", "desc": "Leveraging AI to enhance the Costa Coffee experience, this ad showcases how technology can create the perfect cup, delivering personalized coffee moments with every sip."}];
+window.WORKS=[
+  {
+    "n": 1,
+    "img": "assets/images/awards/x.jpg",
+    "title": "One of Us",
+    "sub": "AI horror film",
+    "cat": "Films",
+    "url": "https://www.youtube.com/watch?v=w1oTqdrQfcA",
+    "desc": "An AI-generated horror film about the unsettling possibility that something ordinary is not what it seems."
+  },
+  {
+    "n": 2,
+    "img": "assets/images/awards/xxx.jpg",
+    "title": "Bajel Safety Film",
+    "sub": "Safety communication",
+    "cat": "Brand films",
+    "url": "https://www.youtube.com/watch?v=C16HrGstyjw",
+    "desc": "An AI-generated safety communication film listed on the GenFrame AI Studio channel."
+  },
+  {
+    "n": 3,
+    "img": "assets/images/awards/852.jpg",
+    "title": "AI Commercial",
+    "sub": "AI-generated commercial",
+    "cat": "Brand films",
+    "url": "https://youtube.com/watch?v=tuCUrvSNBJ0",
+    "desc": "An AI-generated commercial published by GenFrame AI Studio."
+  },
+  {
+    "n": 4,
+    "img": "assets/images/awards/191919.jpg",
+    "title": "Agent One: Two-Hour Shot",
+    "sub": "AI scene experiment",
+    "cat": "Experiments",
+    "url": "https://youtube.com/watch?v=9Ih74Qk_7lc",
+    "desc": "An AI scene experiment made with InVideo's Agent One, published as a two-hour shot workflow."
+  },
+  {
+    "n": 5,
+    "img": "assets/images/awards/169.jpg",
+    "title": "Agman",
+    "sub": "AI film - Part 1",
+    "cat": "Films",
+    "url": "https://youtube.com/watch?v=_0CnGx15Hh4",
+    "desc": "Part one of Agman, an AI film by Palash Sharma exploring narrative storytelling through generated imagery."
+  },
+  {
+    "n": 6,
+    "img": "assets/images/awards/500.jpg",
+    "title": "Honeybun",
+    "sub": "AI film",
+    "cat": "Films",
+    "url": "https://youtube.com/watch?v=cHhdKGhGnDY",
+    "desc": "Honeybun, an AI film by Palash Sharma, also listed in his SHaiKE creator filmography."
+  },
+  {
+    "n": 7,
+    "img": "assets/images/awards/550.jpg",
+    "title": "Hush Puppies",
+    "sub": "AI brand film",
+    "cat": "Brand films",
+    "url": "https://youtube.com/watch?v=84fiKZdklXU",
+    "desc": "An AI brand film for Hush Puppies, created at Genframe Studios."
+  },
+  {
+    "n": 8,
+    "img": "assets/images/awards/416.jpg",
+    "title": "Akiro's Loop",
+    "sub": "AI-generated film",
+    "cat": "Films",
+    "url": "https://www.youtube.com/watch?v=P1OadJV79Qk&t",
+    "desc": "An AI-generated film exploring a time-bending paradox. Palash's public post describes experimenting with Google's Nano Banana in the process."
+  },
+  {
+    "n": 9,
+    "img": "assets/images/awards/6767.jpg",
+    "title": "The Tale of Gajamukhasur",
+    "sub": "Mythological AI film",
+    "cat": "Films",
+    "url": "https://youtube.com/watch?v=3pkuKTpwUVQ",
+    "desc": "A mythological AI film inspired by the legend of Gajamukhasur, with cinematic world-building and dramatic imagery."
+  },
+  {
+    "n": 10,
+    "img": "assets/images/awards/676767.jpg",
+    "title": "Datareel: Patient Communication",
+    "sub": "Healthcare communication",
+    "cat": "Brand films",
+    "url": "https://youtube.com/watch?v=r3iUzLmezrs",
+    "desc": "A healthcare communication film for Datareel, centered on personalized patient communication."
+  },
+  {
+    "n": 11,
+    "img": "assets/images/awards/315.jpg",
+    "title": "VENGREEY",
+    "sub": "Concept trailer",
+    "cat": "Trailers & teasers",
+    "url": "https://youtube.com/watch?v=XK5-VcQXfoM",
+    "desc": "A dark, cinematic concept trailer for VENGREEY. Presented as a trailer rather than a completed feature film."
+  },
+  {
+    "n": 12,
+    "img": "assets/images/awards/9696.jpg",
+    "title": "Kansoft Christmas",
+    "sub": "Christmas brand film",
+    "cat": "Brand films",
+    "url": "https://youtube.com/watch?v=Phda6PQ2LEg",
+    "desc": "A Christmas-themed AI advertisement for Kansoft."
+  },
+  {
+    "n": 13,
+    "img": "assets/images/awards/6969.jpg",
+    "title": "Datareel Christmas",
+    "sub": "Christmas brand film",
+    "cat": "Brand films",
+    "url": "https://youtube.com/watch?v=xogZeOptGnQ",
+    "desc": "A Christmas-themed brand film for Datareel, using a Santa-factory setting."
+  },
+  {
+    "n": 14,
+    "img": "assets/images/awards/775.jpg",
+    "title": "BTS Music Video Teaser",
+    "sub": "AI music teaser",
+    "cat": "Trailers & teasers",
+    "url": "https://youtube.com/watch?v=GcF8Zgexcu4",
+    "desc": "A short AI-generated teaser for a BTS music-video concept."
+  },
+  {
+    "n": 15,
+    "img": "assets/images/awards/333.jpg",
+    "title": "Laws of Motion",
+    "sub": "Educational animation",
+    "cat": "Animation",
+    "url": "https://youtu.be/E3VkMik8ZyA",
+    "desc": "An AI-animated educational film introducing the laws of motion through characters and storytelling."
+  },
+  {
+    "n": 16,
+    "img": "assets/images/awards/444.jpg",
+    "title": "Ghar Ki Diwali",
+    "sub": "AI short film",
+    "cat": "Films",
+    "url": "https://youtu.be/jddnyEshr4Q",
+    "desc": "A Diwali-set AI short about a man working alone while the world outside celebrates."
+  },
+  {
+    "n": 17,
+    "img": "assets/images/awards/415.jpg",
+    "title": "Dadu Ki Bandi",
+    "sub": "AI short film",
+    "cat": "Films",
+    "url": "https://www.youtube.com/watch?v=RzJqXdiTUd0",
+    "desc": "An AI short in which a grandfather shares memories of his first love with his grandchildren."
+  },
+  {
+    "n": 18,
+    "img": "assets/images/awards/215.jpg",
+    "title": "She",
+    "sub": "AI movie trailer",
+    "cat": "Trailers & teasers",
+    "url": "https://youtube.com/watch?v=DbWSZ7pJ_IQ",
+    "desc": "An AI movie trailer titled She, built around mood and atmosphere."
+  },
+  {
+    "n": 19,
+    "img": "assets/images/awards/214.jpg",
+    "title": "Reality",
+    "sub": "AI visual study",
+    "cat": "Experiments",
+    "url": "https://youtube.com/watch?v=0KX_dslWGjs",
+    "desc": "A visual piece titled Reality on the GenFrame AI Studio channel. A detailed project brief has not been published in the checked sources."
+  },
+  {
+    "n": 20,
+    "img": "assets/images/awards/213.jpg",
+    "title": "Arjun the Warrior",
+    "sub": "Mythological AI film",
+    "cat": "Films",
+    "url": "https://youtube.com/watch?v=ac4_Hx4zSAw",
+    "desc": "An AI film titled Arjun the Warrior, drawing on mythological storytelling."
+  },
+  {
+    "n": 21,
+    "img": "assets/images/awards/212.jpg",
+    "title": "When Karna Meets Kunti",
+    "sub": "Mythological AI film",
+    "cat": "Films",
+    "url": "https://youtube.com/watch?v=DclEADKSfwo",
+    "desc": "An AI film centered on the meeting between Karna and Kunti."
+  },
+  {
+    "n": 22,
+    "img": "assets/images/awards/21.jpg",
+    "title": "Pigeon vs Humans",
+    "sub": "AI visual short",
+    "cat": "Experiments",
+    "url": "https://youtube.com/watch?v=8oghhYIdpm0",
+    "desc": "A short visual experiment titled Pigeon vs Humans on the GenFrame AI Studio channel."
+  },
+  {
+    "n": 23,
+    "img": "assets/images/awards/20.jpg",
+    "title": "Untitled - June 18, 2025",
+    "sub": "Original upload has no descriptive title",
+    "cat": "Unverified",
+    "url": "https://youtube.com/watch?v=0MAoD25CXMs",
+    "desc": "The original upload is titled only June 18, 2025. Its project name and category are awaiting confirmation."
+  },
+  {
+    "n": 24,
+    "img": "assets/images/awards/14.jpg",
+    "title": "Train Rex",
+    "sub": "Animated brand film",
+    "cat": "Brand films",
+    "url": "https://youtube.com/watch?v=oieGbamsza0",
+    "desc": "An animated AI brand film for Train Rex."
+  },
+  {
+    "n": 25,
+    "img": "assets/images/awards/15.jpg",
+    "title": "Mother's Day - I",
+    "sub": "Animated brand film",
+    "cat": "Brand films",
+    "url": "https://youtube.com/watch?v=HFV4Wyyo5Fk",
+    "desc": "An AI-generated Mother's Day advertisement, using animated storytelling."
+  },
+  {
+    "n": 26,
+    "img": "assets/images/awards/10.jpg",
+    "title": "Mother's Day - II",
+    "sub": "Animated brand film",
+    "cat": "Brand films",
+    "url": "https://youtube.com/watch?v=T9irqRlL-XE",
+    "desc": "A second AI-generated Mother's Day advertisement, using animated storytelling."
+  },
+  {
+    "n": 27,
+    "img": "assets/images/awards/6.jpg",
+    "title": "Life",
+    "sub": "Cinematic AI short",
+    "cat": "Films",
+    "url": "https://youtube.com/shorts/vvOwDjI8Lsw?si=wEgnQrMboZPfWTKI",
+    "desc": "A cinematic AI short titled Life."
+  },
+  {
+    "n": 28,
+    "img": "assets/images/awards/7.jpg",
+    "title": "Ghibli-Inspired Animation",
+    "sub": "AI animation study",
+    "cat": "Animation",
+    "url": "https://youtube.com/shorts/NkXyhKqafbQ?si=OhNhmN6Yt-3GX7kb",
+    "desc": "An AI-generated animation study inspired by Ghibli-style imagery."
+  },
+  {
+    "n": 29,
+    "img": "assets/images/awards/8.jpg",
+    "title": "Emigino",
+    "sub": "AI product film",
+    "cat": "Brand films",
+    "url": "https://youtube.com/shorts/NJfkNqquR3g?si=vcQEXQyH3_8YeF4W",
+    "desc": "An AI product advertisement titled Emigino."
+  },
+  {
+    "n": 30,
+    "img": "assets/images/awards/9.jpg",
+    "title": "Chocolate World",
+    "sub": "AI x Blender product world",
+    "cat": "Brand films",
+    "url": "https://youtube.com/shorts/enjnlEwgHDg?si=xnGJeaq_6myASq8-",
+    "desc": "A chocolate-themed product world combining AI imagery and Blender, as described on the original portfolio."
+  },
+  {
+    "n": 31,
+    "img": "assets/images/awards/1.webp",
+    "title": "AI Banner Ad",
+    "sub": "AI x Blender brand film",
+    "cat": "Brand films",
+    "url": "https://youtube.com/shorts/LYm9rXrEfkU?si",
+    "desc": "An AI banner advertisement combining AI imagery and Blender, as described on the original portfolio."
+  },
+  {
+    "n": 32,
+    "img": "assets/images/awards/2.webp",
+    "title": "AI & Blender: Creative Synergy",
+    "sub": "Correct video link pending",
+    "cat": "Unverified",
+    "url": "",
+    "desc": "Listed as an AI and Blender project on the original portfolio. Its source video URL leads to unrelated stand-up comedy, so playback is disabled until the correct link is supplied.",
+    "unavailable": true
+  },
+  {
+    "n": 33,
+    "img": "assets/images/awards/3.webp",
+    "title": "Thakur: Train Rex",
+    "sub": "Character-led brand film",
+    "cat": "Brand films",
+    "url": "https://youtube.com/shorts/QeuxOZZZE9s",
+    "desc": "A character-led AI advertisement for Train Rex."
+  },
+  {
+    "n": 34,
+    "img": "assets/images/awards/4.webp",
+    "title": "Train Rex: Get Fit",
+    "sub": "Fitness brand film",
+    "cat": "Brand films",
+    "url": "https://youtube.com/shorts/4dCfPtyqopk",
+    "desc": "An AI advertisement for Train Rex focused on fitness and gym bookings."
+  },
+  {
+    "n": 35,
+    "img": "assets/images/awards/5.webp",
+    "title": "Costa Coffee",
+    "sub": "AI brand film",
+    "cat": "Brand films",
+    "url": "https://youtube.com/shorts/SHtGYUENOtY",
+    "desc": "An AI brand advertisement for Costa Coffee."
+  }
+];

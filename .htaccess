@@ -1,0 +1,5 @@
+Options -Indexes
+ErrorDocument 404 /404.html
+<FilesMatch "^(contact-config\.php|DEPLOY\.md|CONTENT-AUDIT\.md)$">
+  Require all denied
+</FilesMatch>

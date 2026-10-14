@@ -5,7 +5,9 @@ const ytid=u=>{const m=u.match(/(?:v=|youtu\.be\/|shorts\/)([\w-]{11})/);return 
 const lenis=new Lenis({lerp:.085});lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);lenis.stop();
 
 /* ---------- ACTS + layout ---------- */
-const stories=W.filter(w=>w.cat!=='Ads'),ads=W.filter(w=>w.cat==='Ads');
+// Preserve the shipped tunnel order, independent of the corrected grid categories.
+const storyOrder=[5,6,8,9,11,14,15,16,17,27,28];
+const stories=storyOrder.map(n=>W[n-1]),ads=W.filter(w=>!storyOrder.includes(w.n));
 const ACTS=[
  {k:'Act I',t:'Stories',d:'Films, episodes, animation',items:stories,c1:'#f25749',c2:'#6b4cff'},
  {k:'Act II',t:'Brands',d:'Ads that move',items:ads.slice(0,12),c1:'#ffb347',c2:'#d4358c'},
@@ -175,7 +177,7 @@ $('#flight').addEventListener('pointerleave',()=>{hmx=-1;setHover(null)});
 gsap.ticker.add(()=>{if(hov||hmx>=0)hoverCheck()});
 
 /* ---------- quick scan ---------- */
-const cats=['All','Films','Ads','Animation'];
+const cats=['All','Films','Brand films','Trailers & teasers','Animation','Experiments','Unverified'];
 $('#filters').innerHTML=cats.map((c,i)=>`<button class="chip${i?'':' on'}" data-c="${c}">${c}</button>`).join('');
 function drawGrid(c){const g=$('#pgrid'),list=W.filter(w=>c==='All'||w.cat===c);
  g.innerHTML=list.map(w=>`<button class="pcard" data-n="${w.n}"><div class="im"><img src="${w.img}" alt="${w.title}"></div><span class="no">${String(w.n).padStart(2,'0')}</span><h3>${w.title}<small>${w.cat}</small></h3></button>`).join('');
@@ -183,15 +185,15 @@ function drawGrid(c){const g=$('#pgrid'),list=W.filter(w=>c==='All'||w.cat===c);
  gsap.from('#pgrid .pcard',{scale:.8,opacity:0,duration:.5,stagger:{each:.012,from:'center'},ease:'power2.out',clearProps:'all'})}
 $('#filters').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;$$('.chip').forEach(x=>x.classList.toggle('on',x===b));drawGrid(b.dataset.c)});
 $('#pgrid').addEventListener('click',e=>{const c=e.target.closest('.pcard');if(c)openPlayer(W[c.dataset.n-1],c)});
-function openProg(){drawGrid('All');const o=$('#programme');o.classList.add('open');o.setAttribute('aria-hidden','false');gsap.to(o,{opacity:1,duration:.4});lenis.stop()}
+function openProg(){$$('.chip').forEach(b=>b.classList.toggle('on',b.dataset.c==='All'));drawGrid('All');const o=$('#programme');o.classList.add('open');o.setAttribute('aria-hidden','false');gsap.to(o,{opacity:1,duration:.4});lenis.stop()}
 function closeProg(){const o=$('#programme');gsap.to(o,{opacity:0,duration:.3,onComplete:()=>{o.classList.remove('open');o.setAttribute('aria-hidden','true');lenis.start()}})}
-$('#prog').addEventListener('click',openProg);$('#prog2').addEventListener('click',openProg);$('#closeProg').addEventListener('click',closeProg);
+$('#prog').addEventListener('click',openProg);$('#prog2').addEventListener('click',openProg);$('#prog3').addEventListener('click',openProg);$('#closeProg').addEventListener('click',closeProg);
 
 /* ---------- player ---------- */
 let flying=null;
 function openPlayer(w,el){
  const p=$('#player'),f=$('#pframe');
- $('#ptitle').textContent=w.title;$('#psub').textContent=w.sub;$('#pyt').href=w.url;
+ $('#ptitle').textContent=w.title;$('#psub').textContent=w.sub;$('#pdesc').textContent=w.desc;$('#pyt').href=w.url||'#';$('#pyt').hidden=!w.url;
  f.innerHTML='';f.style.backgroundImage=`url(${w.img})`;
  p.classList.add('open');p.setAttribute('aria-hidden','false');lenis.stop();
  gsap.set('#pframe',{opacity:0});gsap.set('.pmeta',{opacity:0,y:20});gsap.to(p,{opacity:1,duration:.5});
@@ -202,7 +204,7 @@ function openPlayer(w,el){
   gsap.set(fly,{x:a.left,y:a.top,width:a.width,height:a.height});
   gsap.to(fly,{x:b.left,y:b.top,width:b.width,height:b.height,duration:reduce?.01:.9,ease:'expo.inOut',onComplete:()=>{
    gsap.set('#pframe',{opacity:1});fly.remove();flying=null;
-   const id=ytid(w.url);if(id)f.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="${w.title}"></iframe>`;
+   if(w.unavailable){f.innerHTML='<div class="video-unavailable"><b>Video link being verified</b><p>The original link points to unrelated content. This project will play once the correct link is confirmed.</p></div>';}const id=ytid(w.url);if(id)f.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="${w.title}"></iframe>`;
    gsap.to('.pmeta',{opacity:1,y:0,duration:.5})}});
  });
 }
@@ -212,3 +214,14 @@ $('#closePlayer').addEventListener('click',closePlayer);
 $('#player').addEventListener('click',e=>{if(e.target.id==='player')closePlayer()});
 addEventListener('keydown',e=>{if(e.key==='Escape'){if($('#player').classList.contains('open'))closePlayer();else if($('#programme').classList.contains('open'))closeProg()}});
 addEventListener('load',()=>ScrollTrigger.refresh());
+
+/* ---------- lower-page interactions ---------- */
+$('#backTop').addEventListener('click',()=>lenis.scrollTo(0));
+let testimonialIndex=0;const testimonials=$$('#testimonialTrack .tcard');
+function showTestimonial(n){testimonialIndex=(n+testimonials.length)%testimonials.length;testimonials.forEach((card,i)=>{card.hidden=i!==testimonialIndex;});$('#testCount').textContent=String(testimonialIndex+1).padStart(2,'0')+' / '+String(testimonials.length).padStart(2,'0');}
+$('#prevTest').addEventListener('click',()=>showTestimonial(testimonialIndex-1));$('#nextTest').addEventListener('click',()=>showTestimonial(testimonialIndex+1));showTestimonial(0);
+$('#contactForm').addEventListener('submit',async e=>{e.preventDefault();const form=e.currentTarget;if(!form.reportValidity())return;const button=form.querySelector('[type="submit"]'),status=$('#formStatus');button.disabled=true;button.textContent='Sending...';status.textContent='';try{const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});let result;try{result=await response.json();}catch{throw new Error('The contact form needs PHP hosting. Please email Palash directly.');}if(!response.ok||!result.ok)throw new Error(result.message||'The form is unavailable. Please email Palash directly.');status.textContent=result.message;form.reset();}catch(error){status.textContent=error.message||'Could not connect. Please email Palash directly.';}finally{button.disabled=false;button.textContent='Send enquiry ↗';}});
+// Keep the film HUD out of the reading sections.
+ScrollTrigger.create({trigger:'#quick-scan',start:'top 80%',onEnter:()=>$('#tc').classList.add('off'),onLeaveBack:()=>$('#tc').classList.remove('off')});
+
+$('#copyEmail').addEventListener('click',async()=>{try{await navigator.clipboard.writeText('palashsharmayt9@gmail.com');$('#copyStatus').textContent='Email copied';}catch{$('#copyStatus').textContent='Select and copy the email address above.';}});
