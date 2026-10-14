@@ -9,7 +9,7 @@ You need all of these before the contact form can send:
 - A domain sender mailbox (the recipient is already configured as palashsharmayt9@gmail.com).
 - Permission to upload Palash's work and testimonials publicly.
 
-This bundle is prepared for https://thebestfuckingportfolio.site. Canonical, Open Graph, Twitter card, JSON-LD, robots.txt and sitemap.xml use that domain. Inbox delivery is not verified until you test it on your hosting. No new site has been published and no enquiry has been sent during preparation.
+This bundle is prepared for https://thebestfuckingportfolio.site. Canonical, Open Graph, Twitter card, JSON-LD, robots.txt and sitemap.xml use that domain. Inbox delivery is not verified until you test it on your hosting. The static demo is published on GitHub Pages. No GoViral deployment or enquiry has been performed during preparation.
 
 ## Upload
 1. Back up any existing website in the domain's document root.
@@ -34,7 +34,7 @@ The endpoint checks input sizes, email syntax, project type, exact browser Origi
 - Project #23 has only the source upload title June 18, 2025. It remains playable but is in Unverified until Palash supplies its name/type.
 - The original site has 35 projects. The year 2026 labels this portfolio edition, not the production year of every film.
 
-Keep contact-config.php server-side and make sure PHP executes on the host. Never serve the folder through a non-PHP server in production. The social links and direct email link still work if server mail is unavailable.
+Keep contact-config.php server-side and make sure PHP executes on the host. Never serve the folder through a non-PHP server in production. The social links and click-to-copy email still work if server mail is unavailable.
 
 ## SEO and server details
 
@@ -43,3 +43,6 @@ The bundle includes local Inter fonts with font-display:swap, a 1200x630 social 
 The .htaccess file supplies a real server 404 handler and blocks directory listing/config/document downloads on Apache-compatible hosting. If your host rejects Options -Indexes or Require directives, ask its support for equivalent directory-listing and file-access protection before removing them. On a non-Apache server, configure the 404 and access restrictions in the host panel.
 
 The form was syntax-parsed and frontend states were tested locally. PHP execution and actual mail delivery still require the hosted test.
+
+## Latest interface update
+The large Quick scan launcher immediately after the tunnel and work CTAs reuse the same 35-thumbnail filtered grid. Tools now shows six tools (Blender and Nano Banana removed from the toolkit only; historical project descriptions are preserved). Testimonials slide with arrows or swipe, with reduced-motion support. Click the email address itself to copy it. The 404 is a lost-frame edit-suite scene with links that work on Pages and the custom domain. Tunnel poster base dimensions are 12% larger than the previous 2026 bundle on desktop and mobile; coordinates, order and flight timing are unchanged.

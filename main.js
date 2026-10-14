@@ -218,10 +218,22 @@ addEventListener('load',()=>ScrollTrigger.refresh());
 /* ---------- lower-page interactions ---------- */
 $('#backTop').addEventListener('click',()=>lenis.scrollTo(0));
 let testimonialIndex=0;const testimonials=$$('#testimonialTrack .tcard');
-function showTestimonial(n){testimonialIndex=(n+testimonials.length)%testimonials.length;testimonials.forEach((card,i)=>{card.hidden=i!==testimonialIndex;});$('#testCount').textContent=String(testimonialIndex+1).padStart(2,'0')+' / '+String(testimonials.length).padStart(2,'0');}
-$('#prevTest').addEventListener('click',()=>showTestimonial(testimonialIndex-1));$('#nextTest').addEventListener('click',()=>showTestimonial(testimonialIndex+1));showTestimonial(0);
+function showTestimonial(n,animate=true){
+ testimonialIndex=(n+testimonials.length)%testimonials.length;
+ testimonials.forEach((card,i)=>{card.setAttribute('aria-hidden',i!==testimonialIndex);card.inert=i!==testimonialIndex;});
+ const width=$('#testimonialWindow').clientWidth;
+ gsap.to('#testimonialTrack',{x:-testimonialIndex*width,duration:reduce||!animate?0:.7,ease:'power3.inOut',overwrite:true});
+ gsap.to('#testimonialWindow',{height:testimonials[testimonialIndex].offsetHeight,duration:reduce||!animate?0:.7,ease:'power3.inOut',overwrite:true});
+ $('#testCount').textContent=String(testimonialIndex+1).padStart(2,'0')+' / '+String(testimonials.length).padStart(2,'0');
+}
+$('#prevTest').addEventListener('click',()=>showTestimonial(testimonialIndex-1));$('#nextTest').addEventListener('click',()=>showTestimonial(testimonialIndex+1));
+addEventListener('resize',()=>showTestimonial(testimonialIndex,false));document.fonts.ready.then(()=>showTestimonial(0,false));
+let touchStart=0;$('#testimonialWindow').addEventListener('touchstart',e=>{touchStart=e.changedTouches[0].clientX},{passive:true});
+$('#testimonialWindow').addEventListener('touchend',e=>{const delta=e.changedTouches[0].clientX-touchStart;if(Math.abs(delta)>50)showTestimonial(testimonialIndex+(delta<0?1:-1))},{passive:true});
+$$('[data-open-scan]').forEach(b=>b.addEventListener('click',openProg));
+$$('a[href="#contact"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();lenis.scrollTo('#contact')}));
 $('#contactForm').addEventListener('submit',async e=>{e.preventDefault();const form=e.currentTarget;if(!form.reportValidity())return;const button=form.querySelector('[type="submit"]'),status=$('#formStatus');button.disabled=true;button.textContent='Sending...';status.textContent='';try{const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});let result;try{result=await response.json();}catch{throw new Error('The contact form needs PHP hosting. Please email Palash directly.');}if(!response.ok||!result.ok)throw new Error(result.message||'The form is unavailable. Please email Palash directly.');status.textContent=result.message;form.reset();}catch(error){status.textContent=error.message||'Could not connect. Please email Palash directly.';}finally{button.disabled=false;button.textContent='Send enquiry ↗';}});
 // Keep the film HUD out of the reading sections.
 ScrollTrigger.create({trigger:'#quick-scan',start:'top 80%',onEnter:()=>$('#tc').classList.add('off'),onLeaveBack:()=>$('#tc').classList.remove('off')});
 
-$('#copyEmail').addEventListener('click',async()=>{try{await navigator.clipboard.writeText('palashsharmayt9@gmail.com');$('#copyStatus').textContent='Email copied';}catch{$('#copyStatus').textContent='Select and copy the email address above.';}});
+$('#emailAddress').addEventListener('click',async()=>{try{await navigator.clipboard.writeText('palashsharmayt9@gmail.com');$('#copyStatus').textContent='Email copied. Paste it into your mail app.';$('#emailAddress').classList.add('copied');setTimeout(()=>$('#emailAddress').classList.remove('copied'),2000);}catch{$('#copyStatus').textContent='Select and copy the email address above.';}});
