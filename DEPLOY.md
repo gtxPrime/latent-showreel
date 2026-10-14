@@ -38,7 +38,7 @@ Keep contact-config.php server-side and make sure PHP executes on the host. Neve
 
 ## SEO and server details
 
-The bundle includes local Inter fonts with font-display:swap, a 1200x630 social card, SVG/PNG favicons, Apple touch icon, real page title/description, canonical, Person JSON-LD, a crawlable project index, robots.txt and sitemap.xml. Keep historic upload years intact. There are no ranking guarantees.
+The bundle includes local Inter fonts with font-display:swap, a 1200x630 social card, SVG/PNG favicons, Apple touch icon, real page title/description, canonical, Person JSON-LD, robots.txt and sitemap.xml. Keep historic upload years intact. There are no ranking guarantees.
 
 The .htaccess file supplies a real server 404 handler and blocks directory listing/config/document downloads on Apache-compatible hosting. If your host rejects Options -Indexes or Require directives, ask its support for equivalent directory-listing and file-access protection before removing them. On a non-Apache server, configure the 404 and access restrictions in the host panel.
 
