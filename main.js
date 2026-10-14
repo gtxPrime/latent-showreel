@@ -9,9 +9,9 @@ const lenis=new Lenis({lerp:.085});lenis.on('scroll',ScrollTrigger.update);gsap.
 const storyOrder=[5,6,8,9,11,14,15,16,17,27,28];
 const stories=storyOrder.map(n=>W[n-1]),ads=W.filter(w=>!storyOrder.includes(w.n));
 const ACTS=[
- {k:'Act I',t:'Stories',d:'Films, episodes, animation',items:stories,c1:'#f0a35a',c2:'#0e5561'},
- {k:'Act II',t:'Brands',d:'Ads that move',items:ads.slice(0,12),c1:'#41d3c0',c2:'#16295e'},
- {k:'Act III',t:'Worlds',d:'Blender x AI, product, spectacle',items:ads.slice(12),c1:'#e5537a',c2:'#381a5e'}
+ {k:'Act I',t:'Stories',d:'Films, episodes, animation',items:stories,c1:'#e05761',c2:'#330d1c'},
+ {k:'Act II',t:'Brands',d:'Ads that move',items:ads.slice(0,12),c1:'#4bc6a0',c2:'#07362f'},
+ {k:'Act III',t:'Worlds',d:'Blender x AI, product, spectacle',items:ads.slice(12),c1:'#d34d5b',c2:'#0b5644'}
 ];
 const tun=$('#tunnel'),frames=[],acts=[];
 let z=0,idx=0;const START=900,GAP=mobile()?470:480,ACTGAP=620;
@@ -128,7 +128,10 @@ const state={near:null};
 function setColors(p){ // act colour crossfade
  const prog=p*ACTS.length;const i=Math.min(ACTS.length-1,Math.floor(prog)),t=prog-i,a=ACTS[i],b=ACTS[Math.min(i+1,ACTS.length-1)];
  const t2=gsap.utils.clamp(0,1,(t-.6)/.4);
- document.documentElement.style.setProperty('--c1',col(a.c1,b.c1,t2));document.documentElement.style.setProperty('--c2',col(a.c2,b.c2,t2));document.documentElement.style.setProperty('--acc',col(a.c1,b.c1,t2));window.__sgc&&window.__sgc(col(a.c1,b.c1,t2),col(a.c2,b.c2,t2));
+ // Fade light through charcoal, never blend complementary red/green into brown.
+ const grade=(x,y)=>t2<.5?col(x,'#06090b',t2*2):col('#06090b',y,(t2-.5)*2);
+ const accent=t2<.5?col(a.c1,'#dbd7cd',t2*2):col('#dbd7cd',b.c1,(t2-.5)*2);
+ document.documentElement.style.setProperty('--c1',grade(a.c1,b.c1));document.documentElement.style.setProperty('--c2',grade(a.c2,b.c2));document.documentElement.style.setProperty('--acc',accent);window.__sgc&&window.__sgc(grade(a.c1,b.c1),grade(a.c2,b.c2));
 }
 const mx=gsap.quickTo('.room','rotationY',{duration:.8}),my=gsap.quickTo('.room','rotationX',{duration:.8});
 if(matchMedia('(hover:hover)').matches)addEventListener('mousemove',e=>{mx((e.clientX/innerWidth-.5)*7);my(-(e.clientY/innerHeight-.5)*5)});
@@ -150,7 +153,7 @@ ScrollTrigger.create({trigger:'#flight',start:'top top',end:()=>'+='+dist(),pin:
    o=Math.round(o*50)/50;if(f._o!==o){f._o=o;f.style.opacity=o}
    const lit=d>180&&d<900;if(lit!==f._l){f._l=lit;f.classList.toggle('lit',lit)}
    if(d>0&&d<nd){nd=d;near=f}
-   if(d<1800&&!mobile()){f.firstChild.style.setProperty('--ca',v>.15?`${-v*7}px 0 0 #ffb25c66,${v*7}px 0 0 #41d3c066`:'0 0 0 transparent')}}
+   if(d<1800&&!mobile()){f.firstChild.style.setProperty('--ca',v>.15?`${-v*7}px 0 0 #e0576144,${v*7}px 0 0 #4bc6a044`:'0 0 0 transparent')}}
   for(const d of decos){const dd=d._z-c;const vis=dd>40&&dd<3200;if(vis!==d._vis){d._vis=vis;d.style.visibility=vis?'visible':'hidden'}if(vis){let o=dd>2200?(3200-dd)/1000:Math.min(1,(dd-40)/300);o=Math.round(o*25)/25;if(o!==d._o){d._o=o;d.style.opacity=o*(d._k?.9:.8)}}}
   for(const a of acts){const d=a.z-c;const o=d>2600?0:d>1800?(2600-d)/800:d<200?Math.max(0,d/200):1;if(a._o!==o){a._o=Math.round(o*40)/40;a.el.style.opacity=a._o;a.el.style.visibility=o<=0?'hidden':'visible'}}
   if(near!==state.near){state.near=near;if(near){$('#passing').textContent=near._w.title+' - '+near._w.sub;$('#actlbl').textContent=near._a.k+' - '+near._a.t}}
@@ -247,19 +250,25 @@ float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h
 float fbm(vec2 p){float v=0.,s=.5;for(int i=0;i<4;i++){v+=s*n(p);p=p*2.02+vec2(3.1,1.7);s*=.5;}return v;}
 void main(){vec2 uv=gl_FragCoord.xy/r;vec2 p=(uv-.5)*vec2(r.x/r.y,1.)*1.6;float tt=t*.045;
 vec2 q=vec2(fbm(p+tt),fbm(p+vec2(5.2,1.3)-tt));vec2 w=vec2(fbm(p+3.*q+vec2(1.7,9.2)+tt*1.3),fbm(p+3.*q+vec2(8.3,2.8)-tt));float f=fbm(p+2.4*w);
-vec3 base=vec3(.012,.02,.03);vec3 c=base+b*smoothstep(.05,.6,length(q));
-c=mix(c,a*1.3,smoothstep(.32,.82,f));float hl=smoothstep(.6,.95,f);c+=a*hl*.6;
-float sil=.5+.5*sin(f*14.+w.x*5.+tt*6.);c+=a*.09*smoothstep(.55,1.,sil)*f;
-float v=smoothstep(1.35,.22,length(uv-.5)*1.6);c*=.26+.74*v;c+=(h(gl_FragCoord.xy+t)-.5)*.03;gl_FragColor=vec4(c,1.);}`;
+// Directional light pools meet in a black seam rather than a muddy colour mix.
+float drift=sin(tt*1.3)*.06;
+float split=smoothstep(.38,.64,uv.x+drift+(w.x-.5)*.13);
+float cloud=smoothstep(.24,.82,f);
+float key=exp(-length((uv-vec2(.3,.58))*vec2(1.1,1.5))*2.1);
+float rim=exp(-length((uv-vec2(.83,.36))*vec2(1.4,1.2))*2.0);
+vec3 c=vec3(.008,.01,.014)+a*(1.-split)*(.09+cloud*.67+key*.3)+b*split*(.24+cloud*.95+rim*.7);
+float sil=.5+.5*sin(f*14.+w.x*5.+tt*6.);c+=a*(1.-split)*.055*smoothstep(.55,1.,sil)*f;
+float v=smoothstep(1.35,.22,length(uv-.5)*1.6);c*=.24+.76*v;
+c+=(h(gl_FragCoord.xy+t)-.5)*.018;gl_FragColor=vec4(c,1.);}`;
 function sh(t,s){const o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);return o}
 const pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs));gl.linkProgram(pr);
 if(!gl.getProgramParameter(pr,gl.LINK_STATUS)){cv.style.display='none';document.getElementById('glow').style.display='block';return}
 gl.useProgram(pr);const bf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,bf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);const lp=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(lp);gl.vertexAttribPointer(lp,2,gl.FLOAT,false,0,0);
 const U=k=>gl.getUniformLocation(pr,k);const ur=U('r'),ut=U('t'),ua=U('a'),ub=U('b');
 const rgb=s=>{let m=String(s).match(/[\d.]+/g);if(String(s)[0]==='#'){const x=parseInt(s.slice(1),16);return[(x>>16)/255,((x>>8)&255)/255,(x&255)/255]}return m?[m[0]/255,m[1]/255,m[2]/255]:[.5,.5,.8]};
-let ca=rgb('#f0a35a'),cb=rgb('#0e5561'),ta=ca,tb=cb;window.__sgc=(x,y)=>{ta=rgb(x);tb=rgb(y)};
+let ca=rgb('#e05761'),cb=rgb('#330d1c'),ta=ca,tb=cb;window.__sgc=(x,y)=>{ta=rgb(x);tb=rgb(y);if(rm){ca=ta.slice();cb=tb.slice();fr()}};
 const sc=Math.min(devicePixelRatio||1,1)*.5;function rs(){cv.width=Math.max(2,innerWidth*sc|0);cv.height=Math.max(2,innerHeight*sc|0);gl.viewport(0,0,cv.width,cv.height)}rs();addEventListener('resize',rs);
-const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;let t0=performance.now();
-function fr(){for(let i=0;i<3;i++){ca[i]+=(ta[i]-ca[i])*.03;cb[i]+=(tb[i]-cb[i])*.03}
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;let t0=performance.now(),last=t0;
+function fr(){const now=performance.now(),blend=1.-Math.exp(-Math.min((now-last)/1000,.5)*3.);last=now;for(let i=0;i<3;i++){ca[i]+=(ta[i]-ca[i])*blend;cb[i]+=(tb[i]-cb[i])*blend}
 gl.uniform2f(ur,cv.width,cv.height);gl.uniform1f(ut,rm?20:(performance.now()-t0)/1000);gl.uniform3fv(ua,ca);gl.uniform3fv(ub,cb);gl.drawArrays(gl.TRIANGLE_STRIP,0,4);if(!rm&&!document.hidden)requestAnimationFrame(fr);}
 fr();document.addEventListener('visibilitychange',()=>{if(!document.hidden&&!rm)requestAnimationFrame(fr)});})();
