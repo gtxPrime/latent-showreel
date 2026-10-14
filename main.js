@@ -11,7 +11,7 @@ const stories=storyOrder.map(n=>W[n-1]),ads=W.filter(w=>!storyOrder.includes(w.n
 const ACTS=[
  {k:'Act I',t:'Stories',d:'Films, episodes, animation',items:stories,c1:'#e05761',c2:'#330d1c'},
  {k:'Act II',t:'Brands',d:'Ads that move',items:ads.slice(0,12),c1:'#4bc6a0',c2:'#07362f'},
- {k:'Act III',t:'Worlds',d:'Blender x AI, product, spectacle',items:ads.slice(12),c1:'#d34d5b',c2:'#0b5644'}
+ {k:'Act III',t:'Worlds',d:'Blender x AI, product, spectacle',items:ads.slice(12),c1:'#d34d5b',c2:'#330d1c'}
 ];
 const tun=$('#tunnel'),frames=[],acts=[];
 let z=0,idx=0;const START=900,GAP=mobile()?470:480,ACTGAP=620;
@@ -153,7 +153,7 @@ ScrollTrigger.create({trigger:'#flight',start:'top top',end:()=>'+='+dist(),pin:
    o=Math.round(o*50)/50;if(f._o!==o){f._o=o;f.style.opacity=o}
    const lit=d>180&&d<900;if(lit!==f._l){f._l=lit;f.classList.toggle('lit',lit)}
    if(d>0&&d<nd){nd=d;near=f}
-   if(d<1800&&!mobile()){f.firstChild.style.setProperty('--ca',v>.15?`${-v*7}px 0 0 #e0576144,${v*7}px 0 0 #4bc6a044`:'0 0 0 transparent')}}
+   if(d<1800&&!mobile()){f.firstChild.style.setProperty('--ca',v>.15?`${-v*7}px 0 0 color-mix(in srgb,var(--acc) 27%,transparent),${v*7}px 0 0 color-mix(in srgb,var(--acc) 27%,transparent)`:'0 0 0 transparent')}}
   for(const d of decos){const dd=d._z-c;const vis=dd>40&&dd<3200;if(vis!==d._vis){d._vis=vis;d.style.visibility=vis?'visible':'hidden'}if(vis){let o=dd>2200?(3200-dd)/1000:Math.min(1,(dd-40)/300);o=Math.round(o*25)/25;if(o!==d._o){d._o=o;d.style.opacity=o*(d._k?.9:.8)}}}
   for(const a of acts){const d=a.z-c;const o=d>2600?0:d>1800?(2600-d)/800:d<200?Math.max(0,d/200):1;if(a._o!==o){a._o=Math.round(o*40)/40;a.el.style.opacity=a._o;a.el.style.visibility=o<=0?'hidden':'visible'}}
   if(near!==state.near){state.near=near;if(near){$('#passing').textContent=near._w.title+' - '+near._w.sub;$('#actlbl').textContent=near._a.k+' - '+near._a.t}}
