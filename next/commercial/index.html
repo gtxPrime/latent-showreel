@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Commercial work | Palash Sharma</title>
+<meta name="description" content="Brand films and AI commercials by Palash Sharma: Hush Puppies, Costa Coffee, Train Rex, Datareel, Kansoft and more. One screen, every commercial project.">
+<meta name="theme-color" content="#050507">
+<link rel="canonical" href="https://thebestfuckingportfolio.site/commercial">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Palash Sharma Portfolio">
+<meta property="og:title" content="Commercial work | Palash Sharma">
+<meta property="og:description" content="Brand films and AI commercials by Palash Sharma. One screen, every commercial project.">
+<meta property="og:url" content="https://thebestfuckingportfolio.site/commercial">
+<meta property="og:image" content="https://thebestfuckingportfolio.site/assets/social-card.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Commercial work | Palash Sharma"><meta name="twitter:description" content="Brand films and AI commercials, one screen."><meta name="twitter:image" content="https://thebestfuckingportfolio.site/assets/social-card.png">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/inter-400.ttf" as="font" type="font/ttf" crossorigin><link rel="preload" href="../assets/fonts/inter-700.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="../style.css">
+<style>
+body{overflow-x:hidden}
+#player{transition:opacity .3s}#player.open{opacity:1}
+.cwall{height:100svh;display:flex;flex-direction:column;padding:84px 4vw 18px;gap:14px}
+.cwall-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap}
+.cwall-head h1{font-size:clamp(22px,3vw,34px);letter-spacing:-.03em;font-weight:800;margin-top:6px}
+.cwall-head p{color:var(--mut);font-size:13px}
+.cgrid{display:grid;grid-template-columns:repeat(7,1fr);grid-auto-rows:1fr;gap:8px;flex:1;min-height:0}
+.cgrid .pcard{opacity:0;animation:tin .5s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes tin{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
+.cgrid .pcard h3 small{color:var(--acc)}
+.cstrip{border-top:1px solid var(--line);padding:56px 8vw;display:flex;justify-content:space-between;align-items:center;gap:26px;flex-wrap:wrap;background:rgba(5,5,7,.94)}
+.cstrip h2{font-size:clamp(24px,3.4vw,44px);letter-spacing:-.04em;font-weight:900;line-height:1.05}
+.cstrip .lead{color:var(--mut);margin-top:10px;max-width:420px;line-height:1.6;font-size:15px}
+.cstrip-actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cfoot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px 8vw;border-top:1px solid var(--line);color:var(--mut);font-size:12px;background:rgba(5,5,7,.94)}
+.cfoot a{color:var(--mut);text-decoration:underline;text-underline-offset:4px}.cfoot a:hover{color:var(--acc)}
+#copyStatusC{margin-left:0}
+@media(max-width:900px){
+ .cwall{padding:76px 4vw 14px;height:auto;min-height:0}
+ .cgrid{grid-template-columns:repeat(2,1fr);grid-auto-rows:auto}
+ .cgrid .pcard{aspect-ratio:4/3}
+ .cgrid .pcard h3{font-size:11px;padding:16px 8px 6px}
+ .cgrid .pcard h3 small{display:block;font-size:8px}
+ .cstrip{padding:44px 6vw}.cfoot{padding:18px 6vw}
+}
+@media(prefers-reduced-motion:reduce){.cgrid .pcard{animation:none;opacity:1}}
+</style>
+</head>
+<body>
+
+<header class="hud">
+  <a href="../" class="logo">Palash<b>.</b>S</a>
+  <div class="hud-mid"><span class="lbl">Commercial</span><b>Brand films &amp; ads</b></div>
+  <div class="hud-r"><a class="ghost sm" href="../">Full showreel</a><a class="ghost sm solid" href="#contact-strip">Contact</a></div>
+</header>
+
+<main>
+<section class="cwall" aria-label="Commercial projects">
+  <div class="cwall-head">
+    <div><p class="kicker">Commercial</p><h1>Every ad. One screen.</h1></div>
+    <p>24 brand films and commercials. Tap a tile to play.</p>
+  </div>
+  <div class="cgrid" id="cgrid"></div>
+</section>
+
+<section class="cstrip" id="contact-strip">
+  <div><p class="kicker">Next on the timeline</p><h2>Your brand,<br><em>rendered next.</em></h2>
+  <p class="lead">Have a product, a campaign or an idea to explore? Tell Palash what you have in mind.</p></div>
+  <div class="cstrip-actions">
+    <button class="email-copy" id="emailAddress" aria-label="Copy palashsharmayt9@gmail.com">palashsharmayt9@gmail.com</button>
+    <span id="copyStatusC">Click the email to copy</span>
+    <a class="btn" href="../">See the full showreel &#8599;</a>
+  </div>
+</section>
+</main>
+
+<footer class="cfoot">
+  <span>&copy; 2026 Palash Sharma</span>
+  <span><a href="../">Full portfolio</a> &middot; Design &amp; development by <a href="https://github.com/gtxPrime" target="_blank" rel="noopener noreferrer">@gtxPrime</a></span>
+</footer>
+
+<div id="player" class="overlay dark" aria-hidden="true">
+  <button class="x" id="closePlayer" aria-label="Close">&times;</button>
+  <div class="pwrap"><div class="pframe" id="pframe"></div>
+    <div class="pmeta"><div><b id="ptitle"></b><span id="psub"></span><p id="pdesc"></p></div><a id="pyt" href="#" target="_blank" rel="noopener" class="btn">Open on YouTube</a></div></div>
+</div>
+
+<script src="../data.js"></script>
+<script>
+// Only projects whose YouTube links were opened and confirmed to be commercials/brand films.
+const IDS=[43,6,3,41,42,37,38,39,1,13,12,40,36,2,7,10,24,25,26,29,31,33,34,35];
+const works=IDS.map(n=>window.WORKS.find(w=>w.n===n));
+const $=s=>document.querySelector(s);
+const ytid=u=>{const m=(u||'').match(/(?:v=|youtu\.be\/|shorts\/)([\w-]{11})/);return m?m[1]:''};
+$('#cgrid').innerHTML=works.map((w,i)=>`<button class="pcard" data-i="${i}" style="animation-delay:${i*45}ms"><div class="im"><img src="../${w.img}" alt="${w.title}" loading="${i<7?'eager':'lazy'}" decoding="async"></div><span class="no">${String(w.n).padStart(2,'0')}</span><h3>${w.title}<small>${w.cat}</small></h3></button>`).join('');
+function openPlayer(w){
+ $('#ptitle').textContent=w.title;$('#psub').textContent=w.sub;$('#pdesc').textContent=w.desc;$('#pyt').href=w.url;
+ const f=$('#pframe');f.innerHTML='';f.style.backgroundImage=`url(../${w.img})`;
+ const id=ytid(w.url);if(id)f.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="${w.title}"></iframe>`;
+ const p=$('#player');p.classList.add('open');p.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+}
+function closePlayer(){const p=$('#player');p.classList.remove('open');p.setAttribute('aria-hidden','true');$('#pframe').innerHTML='';document.body.style.overflow='';}
+$('#cgrid').addEventListener('click',e=>{const c=e.target.closest('.pcard');if(c)openPlayer(works[+c.dataset.i])});
+$('#closePlayer').addEventListener('click',closePlayer);
+$('#player').addEventListener('click',e=>{if(e.target.id==='player')closePlayer()});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#player').classList.contains('open'))closePlayer()});
+$('#emailAddress').addEventListener('click',async()=>{try{await navigator.clipboard.writeText('palashsharmayt9@gmail.com');$('#copyStatusC').textContent='Email copied. Paste it into your mail app.';$('#emailAddress').classList.add('copied');setTimeout(()=>$('#emailAddress').classList.remove('copied'),2000);}catch{$('#copyStatusC').textContent='Select and copy the email address above.';}});
+</script>
+</body></html>
