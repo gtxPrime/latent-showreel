@@ -182,8 +182,10 @@ gsap.ticker.add(()=>{if(hov||hmx>=0)hoverCheck()});
 /* ---------- quick scan ---------- */
 const cats=['All','Films','Brand films','Trailers & teasers','Animation','Experiments','Unverified'];
 $('#filters').innerHTML=cats.map((c,i)=>`<button class="chip${i?'':' on'}" data-c="${c}">${c}</button>`).join('');
-function drawGrid(c){const g=$('#pgrid'),list=W.filter(w=>c==='All'||w.cat===c);
- g.innerHTML=list.map(w=>`<button class="pcard" data-n="${w.n}"><div class="im"><img src="${w.img}" alt="${w.title}"></div><span class="no">${String(w.n).padStart(2,'0')}</span><h3>${w.title}<small>${w.cat}</small></h3></button>`).join('');
+const SCANSEQ=[43,6,3,42,37,38,39,1,13,12,40,36,41,2,7,10,24,25,26,29,31,33,34,35];
+function drawGrid(c){const g=$('#pgrid');let list=W.filter(w=>c==='All'||w.cat===c);
+ if(c==='All')list=list.slice().sort((a,b)=>{const i=SCANSEQ.indexOf(a.n),j=SCANSEQ.indexOf(b.n);return (i<0?999:i)-(j<0?999:j)||a.n-b.n});
+ g.innerHTML=list.map(w=>`<button class="pcard" data-n="${w.n}"><div class="im"><img src="${w.img}" alt="${w.title}"></div><span class="no">${String(w.n).padStart(2,'0')}</span><h3>${w.title}</h3></button>`).join('');
  const k=list.length,cols=mobile()?4:(k>28?7:k>20?6:k>12?5:4);g.style.gridTemplateColumns=`repeat(${cols},1fr)`;
  gsap.from('#pgrid .pcard',{scale:.8,opacity:0,duration:.5,stagger:{each:.012,from:'center'},ease:'power2.out',clearProps:'all'})}
 $('#filters').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;$$('.chip').forEach(x=>x.classList.toggle('on',x===b));drawGrid(b.dataset.c)});

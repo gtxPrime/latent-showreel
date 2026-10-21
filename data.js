@@ -20,7 +20,7 @@ window.WORKS=[
   {
     "n": 3,
     "img": "assets/images/awards/852.jpg",
-    "title": "AI Commercial",
+    "title": "Spartan Shoes",
     "sub": "AI-generated commercial",
     "cat": "Brand films",
     "url": "https://youtube.com/watch?v=tuCUrvSNBJ0",
@@ -350,5 +350,41 @@ window.WORKS=[
     "cat": "Brand films",
     "url": "https://youtu.be/MFDb9QG83TE",
     "desc": "An AI ad for Datareel following a baby vaccination journey, published by GenFrame AI Studio."
+  },
+  {
+    "n": 40,
+    "img": "assets/images/awards/yt40.jpg",
+    "title": "AI SaaS Company Ad",
+    "sub": "AI SaaS ad (vertical)",
+    "cat": "Brand films",
+    "url": "https://youtube.com/shorts/Pt3HqokhM94",
+    "desc": "A vertical AI-generated SaaS company ad published by GenFrame AI Studio."
+  },
+  {
+    "n": 41,
+    "img": "assets/images/awards/yt41.jpg",
+    "title": "AI Pre-Visualization for Meta",
+    "sub": "AI pre-visualization (vertical)",
+    "cat": "Brand films",
+    "url": "https://youtube.com/shorts/U-EOdWPt-xM",
+    "desc": "A vertical AI pre-visualization created for Meta, published by GenFrame AI Studio."
+  },
+  {
+    "n": 42,
+    "img": "assets/images/awards/yt42.jpg",
+    "title": "AI Hybrid Reel",
+    "sub": "AI hybrid reel (vertical)",
+    "cat": "Brand films",
+    "url": "https://youtube.com/shorts/M5YWTmc5DGQ",
+    "desc": "A vertical AI hybrid reel combining live action and AI footage, published by GenFrame AI Studio."
+  },
+  {
+    "n": 43,
+    "img": "assets/images/awards/yt43.jpg",
+    "title": "Sleepwell",
+    "sub": "AI spec ad",
+    "cat": "Brand films",
+    "url": "https://youtu.be/lb-QjFBQmf4",
+    "desc": "An AI spec ad for Sleepwell, published on the Zodal channel."
   }
 ];

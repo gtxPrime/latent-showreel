@@ -34,6 +34,11 @@ body{overflow-x:hidden}
 .cfoot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px 8vw;border-top:1px solid var(--line);color:var(--mut);font-size:12px;background:rgba(5,5,7,.94)}
 .cfoot a{color:var(--mut);text-decoration:underline;text-underline-offset:4px}.cfoot a:hover{color:var(--acc)}
 #copyStatusC{margin-left:0}
+@media(min-width:901px){
+ .cwall{padding-top:66px;gap:10px}
+ .cwall-head h1{font-size:clamp(20px,2.6vw,30px)}
+ .cgrid{grid-auto-rows:minmax(0,1fr)}
+}
 @media(max-width:900px){
  .cwall{padding:76px 4vw 14px;height:auto;min-height:0}
  .cgrid{grid-template-columns:repeat(2,1fr);grid-auto-rows:auto}
@@ -57,7 +62,7 @@ body{overflow-x:hidden}
 <section class="cwall" aria-label="Commercial projects">
   <div class="cwall-head">
     <div><p class="kicker">Commercial</p><h1>Every ad. One screen.</h1></div>
-    <p>17 brand films and commercials. Tap a tile to play.</p>
+    <p>24 brand films and commercials. Tap a tile to play.</p>
   </div>
   <div class="cgrid" id="cgrid"></div>
 </section>
@@ -87,11 +92,11 @@ body{overflow-x:hidden}
 <script src="../data.js"></script>
 <script>
 // Only projects whose YouTube links were opened and confirmed to be commercials/brand films.
-const IDS=[2,3,7,10,12,13,24,25,26,29,31,33,34,35,36,37,39];
+const IDS=[43,6,3,42,37,38,39,1,13,12,40,36,41,2,7,10,24,25,26,29,31,33,34,35];
 const works=IDS.map(n=>window.WORKS.find(w=>w.n===n));
 const $=s=>document.querySelector(s);
 const ytid=u=>{const m=(u||'').match(/(?:v=|youtu\.be\/|shorts\/)([\w-]{11})/);return m?m[1]:''};
-$('#cgrid').innerHTML=works.map((w,i)=>`<button class="pcard" data-i="${i}" style="animation-delay:${i*45}ms"><div class="im"><img src="../${w.img}" alt="${w.title}" loading="${i<7?'eager':'lazy'}" decoding="async"></div><span class="no">${String(w.n).padStart(2,'0')}</span><h3>${w.title}<small>${w.cat}</small></h3></button>`).join('');
+$('#cgrid').innerHTML=works.map((w,i)=>`<button class="pcard" data-i="${i}" style="animation-delay:${i*45}ms"><div class="im"><img src="../${w.img}" alt="${w.title}" loading="${i<7?'eager':'lazy'}" decoding="async"></div><span class="no">${String(w.n).padStart(2,'0')}</span><h3>${w.title}</h3></button>`).join('');
 function openPlayer(w){
  $('#ptitle').textContent=w.title;$('#psub').textContent=w.sub;$('#pdesc').textContent=w.desc;$('#pyt').href=w.url;
  const f=$('#pframe');f.innerHTML='';f.style.backgroundImage=`url(../${w.img})`;
