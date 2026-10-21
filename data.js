@@ -314,5 +314,41 @@ window.WORKS=[
     "cat": "Brand films",
     "url": "https://youtube.com/shorts/SHtGYUENOtY",
     "desc": "An AI brand advertisement for Costa Coffee."
+  },
+  {
+    "n": 36,
+    "img": "assets/images/awards/yt36.jpg",
+    "title": "AI SaaS Ad",
+    "sub": "AI SaaS ad (vertical)",
+    "cat": "Brand films",
+    "url": "https://youtube.com/shorts/g_lNYa5_dpg",
+    "desc": "A vertical AI-generated SaaS ad published by GenFrame AI Studio."
+  },
+  {
+    "n": 37,
+    "img": "assets/images/awards/yt37.jpg",
+    "title": "Train Rex: Hybrid Ad",
+    "sub": "AI hybrid ad (vertical)",
+    "cat": "Brand films",
+    "url": "https://youtube.com/shorts/-2Y10OMGkIk",
+    "desc": "A vertical AI hybrid ad for Train Rex, published by GenFrame AI Studio."
+  },
+  {
+    "n": 38,
+    "img": "assets/images/awards/yt38.jpg",
+    "title": "Swapna",
+    "sub": "AI funny short film",
+    "cat": "Films",
+    "url": "https://youtu.be/1lKs2KpvdPo",
+    "desc": "Swapna, a funny AI short film published by GenFrame AI Studio."
+  },
+  {
+    "n": 39,
+    "img": "assets/images/awards/yt39.jpg",
+    "title": "Datareel: Baby Vaccination Journey",
+    "sub": "Healthcare AI ad",
+    "cat": "Brand films",
+    "url": "https://youtu.be/MFDb9QG83TE",
+    "desc": "An AI ad for Datareel following a baby vaccination journey, published by GenFrame AI Studio."
   }
 ];

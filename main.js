@@ -6,7 +6,7 @@ const lenis=new Lenis({lerp:.085});lenis.on('scroll',ScrollTrigger.update);gsap.
 
 /* ---------- ACTS + layout ---------- */
 // Preserve the shipped tunnel order, independent of the corrected grid categories.
-const storyOrder=[5,6,8,9,11,14,15,16,17,27,28];
+const storyOrder=[5,6,8,9,11,14,15,16,17,27,28,38];
 const stories=storyOrder.map(n=>W[n-1]),ads=W.filter(w=>!storyOrder.includes(w.n));
 const ACTS=[
  {k:'Act I',t:'Stories',d:'Films, episodes, animation',items:stories,c1:'#e05761',c2:'#330d1c'},
