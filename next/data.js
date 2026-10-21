@@ -20,7 +20,7 @@ window.WORKS=[
   {
     "n": 3,
     "img": "assets/images/awards/852.jpg",
-    "title": "AI Commercial",
+    "title": "Spartan Shoes",
     "sub": "AI-generated commercial",
     "cat": "Brand films",
     "url": "https://youtube.com/watch?v=tuCUrvSNBJ0",
