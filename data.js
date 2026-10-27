@@ -391,9 +391,9 @@ window.WORKS=[
     "n": 44,
     "img": "assets/images/awards/yt44.jpg",
     "title": "Ai Film from Allen",
-    "sub": "AI animated film",
-    "cat": "Films",
+    "sub": "AI commercial for Allen",
+    "cat": "Brand films",
     "url": "https://youtu.be/R-J4_C6OKks",
-    "desc": "An AI-generated animated film, published by GenFrame AI Studio."
+    "desc": "An AI-generated commercial project for Allen, published by GenFrame AI Studio."
   }
 ];

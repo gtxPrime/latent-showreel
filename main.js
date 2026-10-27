@@ -6,11 +6,11 @@ const lenis=new Lenis({lerp:.085});lenis.on('scroll',ScrollTrigger.update);gsap.
 
 /* ---------- ACTS + layout ---------- */
 // Preserve the shipped tunnel order, independent of the corrected grid categories.
-const storyOrder=[5,6,8,9,11,14,15,16,17,27,28,38,44];
-const stories=storyOrder.map(n=>W[n-1]),ads=W.filter(w=>!storyOrder.includes(w.n));
+const storyOrder=[5,6,8,9,11,14,15,16,17,27,28,38];
+const stories=storyOrder.map(n=>W[n-1]),ads=W.filter(w=>!storyOrder.includes(w.n)&&w.n!==44);
 const ACTS=[
  {k:'Act I',t:'Stories',d:'Films, episodes, animation',items:stories,c1:'#e05761',c2:'#330d1c'},
- {k:'Act II',t:'Brands',d:'Ads that move',items:ads.slice(0,12),c1:'#4bc6a0',c2:'#07362f'},
+ {k:'Act II',t:'Brands',d:'Ads that move',items:[W[43],...ads.slice(0,12)],c1:'#4bc6a0',c2:'#07362f'},
  {k:'Act III',t:'Worlds',d:'Blender x AI, product, spectacle',items:ads.slice(12),c1:'#d34d5b',c2:'#330d1c'}
 ];
 const tun=$('#tunnel'),frames=[],acts=[];
@@ -182,8 +182,9 @@ gsap.ticker.add(()=>{if(hov||hmx>=0)hoverCheck()});
 /* ---------- quick scan ---------- */
 const cats=['All','Films','Brand films','Trailers & teasers','Animation','Experiments','Unverified'];
 $('#filters').innerHTML=cats.map((c,i)=>`<button class="chip${i?'':' on'}" data-c="${c}">${c}</button>`).join('');
-const SCANSEQ=[43,6,3,42,37,38,39,1,13,12,40,36,41,2,7,10,24,25,26,29,31,33,34,35];
+const SCANSEQ=[44,43,6,3,42,37,38,39,1,13,12,40,36,41,2,7,10,24,25,26,29,31,33,34,35];
 function drawGrid(c){const g=$('#pgrid');let list=W.filter(w=>c==='All'||w.cat===c);
+ if(c==='Brand films')list=list.slice().sort((a,b)=>(b.n===44)-(a.n===44));
  if(c==='All')list=list.slice().sort((a,b)=>{const i=SCANSEQ.indexOf(a.n),j=SCANSEQ.indexOf(b.n);return (i<0?999:i)-(j<0?999:j)||a.n-b.n});
  g.innerHTML=list.map(w=>`<button class="pcard" data-n="${w.n}"><div class="im"><img src="${w.img}" alt="${w.title}"></div><span class="no">${String(w.n).padStart(2,'0')}</span><h3>${w.title}</h3></button>`).join('');
  const k=list.length,cols=mobile()?4:(k>28?7:k>20?6:k>12?5:4);g.style.gridTemplateColumns=`repeat(${cols},1fr)`;
