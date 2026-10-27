@@ -386,5 +386,14 @@ window.WORKS=[
     "cat": "Brand films",
     "url": "https://youtu.be/lb-QjFBQmf4",
     "desc": "An AI spec ad for Sleepwell, published on the Zodal channel."
+  },
+  {
+    "n": 44,
+    "img": "assets/images/awards/yt44.jpg",
+    "title": "Ai Film from Allen",
+    "sub": "AI animated film",
+    "cat": "Films",
+    "url": "https://youtu.be/R-J4_C6OKks",
+    "desc": "An AI-generated animated film, published by GenFrame AI Studio."
   }
 ];
